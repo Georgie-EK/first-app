@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
-import { obvervalbe } from './App';
 import './index.css';
-import App from './App';
 import moment from "moment"
 
 const Test = () => {
