@@ -10,7 +10,7 @@ const Test = () => {
   //const [respData2, setRespData2] = useState([])
 
   useEffect(()=> {
-    fetch("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=306&date="+moment().format('DD-MM-YYYY'))
+    fetch("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=265&date="+moment().format('DD-MM-YYYY'))
     .then(response=> response.json())
     .then(data=> setRespData(data.centers.filter(center=> center.sessions.filter(session => (session.min_age_limit === 45|| session.allow_all_age) && session.available_capacity_dose2 > 1 && session.vaccine==="COVISHIELD" ).length > 0)
     .map(center =>(
@@ -21,7 +21,7 @@ const Test = () => {
       ))
 
     const instance  = setInterval(()=>{
-      fetch("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=306&date="+moment().format('DD-MM-YYYY'))
+      fetch("https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=265&date="+moment().format('DD-MM-YYYY'))
     .then(response=> response.json())
     .then(data=> setRespData(data.centers.filter(center=> center.sessions.filter(session => (session.min_age_limit === 45|| session.allow_all_age) && session.available_capacity_dose2 > 1 && session.vaccine==="COVISHIELD" ).length > 0)
     .map(center =>(
